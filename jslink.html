@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script async src="jslink.js"></script>
+</head>
+<body>
+</body>
+</html>
+<!-- 자바스크립트 다운로드의 개념 -->
+<!-- Header에 선언하면 다운로드 및 실행을 하고 body의 테그를 파싱한다
+    단점은 다운로드 및 실행시간이 오래걸리면 태그들의 파싱이 늦게 된다는 점-->
+
+
+<!--비동기적으로 body파싱을 하면서 다운로드를 실행하고 다운로드가 완료되면 파싱을 멈추고 js를 실행한다
+    장점은 다운로드 받는 시간을 절약, 단점은 js파일에 의존되어있는 부분이 인식이 안 될 수도 있다.
+    다수의 파일을 다운로드 받을 때 먼저 다운로드 된 파일부터 실행하게 된다.-->
+<!-- <script async src="jslink.js"></script> -->
+
+<!--비동기적으로 body파싱을 하면서 다운로드를 하고 다운로드를 완료하면 기다리다가 body파싱이 끝나고 다운받은 js를 실행
+    효율도 좋고 가장 안정적이다.
+    다수의 파일을 다운로드 받을때도 순서대로 실행되기 때문에 안정적.-->
+    <!-- <script defer src="jslink.js"></script> -->
+
+<!-- body밑에 하면 html파싱이 다 끝나고 실행되기 때문에 body의 내용물이 빨리 나온다
+    단점은 body의 내용이 js파일에 의존되어있는 부분이 많으면 인식되지 않는 부분이 생길 수 있다.-->
+<!-- <script src="jslink.js"></script> -->
