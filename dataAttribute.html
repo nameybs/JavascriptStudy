@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataAttribute</title>
+    <script>
+        function btnClick(idx) {
+            let btnData = document.querySelector("#btn" + idx);
+            let data = document.querySelectorAll("[data-common]");
+    
+            // data속성값 취득
+            console.log(btnData.dataset['value' + idx]);
+            console.log(data[idx].dataset.common);
+    
+            // data속성값 변경
+            btnData.dataset['value'+ idx] = "btn2";
+            console.log(btnData.dataset['value' + idx]);
+        }
+    </script>
+
+    <style>
+        [data-common] {
+            background-color: yellow;
+        }
+
+        #btn0[data-common] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label>Button 1 : </label>
+                    <input id="btn0" type="button" onclick="btnClick(0)" value="Button" data-common="cmn0" data-value0="btn0" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Button 2 : </label>
+                    <input id="btn1" type="button" onclick="btnClick(1)" value="Button" data-common="cmn1" data-value1="btn1" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
